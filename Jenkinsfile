@@ -37,13 +37,13 @@ pipeline {
             steps {
                 echo 'using docker pipeline plugin to build and push image'
                 script {
-                    def imageName = "chetan1712/cbsflask"
-                    def imageTag  = "appversion$BUILD_NUMBER"
-                    def ashuCred = "480087f2-27c4-4acf-b208-19b1e0b0cf57"
+                    def imageName = "chetan1712/cbsjava"
+                    def imageTag  = "tomcat$BUILD_NUMBER"
+                    def cbsCred = "480087f2-27c4-4acf-b208-19b1e0b0cf57"
                     // building image 
                     docker.build(imageName + ":" + imageTag , " -f Dockerfile .")
                     // pushing image 
-                    docker.withRegistry('https://registry.hub.docker.com',ashuCred){
+                    docker.withRegistry('https://registry.hub.docker.com',cbsCred){
                         docker.image(imageName + ":" + imageTag).push()
                     }
                 }
