@@ -11,7 +11,15 @@ pipeline {
             }
             
         }
-        // creating second stage for docker build and test
+        // creating second stage for SAST analysis for any bugs
+
+        stage ('SAST using trivy for critical vuln'){
+          steps
+          {
+            echo 'using trivy to scan code pushed by developers'
+            sh 'trivy fs --scanners vuln,secret,misconfig .'
+          }
+        }
         
     }
 }
