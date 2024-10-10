@@ -1,6 +1,6 @@
 version: '3.9'
 services: 
-  cbs-flaskapp:
+  cbs-springboot:
    image: cbsspring:tomcatv1
    build:
      context: . #location of dockerfile
