@@ -21,5 +21,17 @@ pipeline {
           }
         }
         
+
+      // using compsoe
+        stage('compsoe for build and curl for app status test') {
+            steps {
+                echo 'running docker compose'
+                sh 'docker-compose down'
+                sh 'docker-compose up -d --build'
+                sh 'docker-compose ps'                
+            }
+            
+        }
+        
     }
 }
