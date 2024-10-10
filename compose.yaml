@@ -1,11 +1,11 @@
 version: '3.9'
 services: 
   cbs-flaskapp:
-   image: cbs-flask:uniappv1
+   image: cbsspring:tomcatv1
    build:
      context: . #location of dockerfile
      dockerfile: Dockerfile
-   container_name: cbspyc1
+   container_name: cbsspringc1
    ports:
    - 4980:5000
 
