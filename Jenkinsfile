@@ -13,7 +13,7 @@ pipeline {
         }
         // creating second stage for SAST analysis for any bugs
 
-        stage ('SAST using trivy for critical vuln'){
+        stage ('SAST using trivy for critical vulnerabilities'){
           steps
           {
             echo 'using trivy to scan code pushed by developers'
